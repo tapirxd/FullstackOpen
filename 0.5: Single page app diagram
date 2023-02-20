@@ -28,13 +28,4 @@ sequenceDiagram
     Note right of browser: The browser executes the callback function that renders the notes 
     Note right of browser: The browser adds HTML elements for displaying the notes through the DOM-API 
 
-    activate server
-    browser->>server: POST REQUEST:  "note" 
-    deactivate server    
-    Note right of browser: The content-type is JSON without it the server wouldn't know how to parse the data 
-
-    Note left of server: The server calls e.preventDefault() which prevents the default action when a form is processed which would be to cause a new GET request
-    Note left of server: Then the event handler creates a new note and adds it to the notes list with notes.push(note) which rerenders the list and sends the new note to the server
-    activate server
-    server-->>browser: POST: note
-    deactivate server 
+    
